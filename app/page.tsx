@@ -1,25 +1,23 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Services from "../components/Skills";
+import Skills from "../components/Skills";
+import Projects from "../components/Projects";
 import TechStack from "../components/TechStack";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f7f1e8]">
+    <main className="min-h-screen bg-[#f7f1e8] text-[#1d1d1d] selection:bg-[#cb7b43] selection:text-white">
       <Navbar />
-
       <Hero />
-
-      <section className="grid lg:grid-cols-3 border-t border-[#e4d9c8]">
-
-        <About />
-
-        <Services />
-
-        <TechStack />
-
-      </section>
+      <About />
+      <Skills />
+      <Projects />
+      <TechStack />
+      <Contact />
+      <Footer />
     </main>
   );
 }

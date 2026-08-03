@@ -1,16 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Menu } from "lucide-react";
+import { ArrowUpRight, Menu, X, Download } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
-  { title: "Home", href: "#" },
+  { title: "Home", href: "#home" },
   { title: "About", href: "#about" },
   { title: "Skills", href: "#skills" },
   { title: "Projects", href: "#projects" },
-  { title: "Blog", href: "#blog" },
+  { title: "Architecture", href: "#tech-stack" },
   { title: "Contact", href: "#contact" },
 ];
 
@@ -19,83 +19,84 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-[#f7f1e8]/90 backdrop-blur-md">
-        <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <header className="sticky top-0 z-50 bg-[#f7f1e8]/90 backdrop-blur-md border-b border-[#e8ded0]/80 transition-all duration-300">
+        <div className="mx-auto flex h-20 lg:h-24 max-w-7xl items-center justify-between px-6 lg:px-10">
           {/* Logo */}
           <Link
-            href="/"
-            className="font-serif text-4xl font-bold tracking-tight text-[#1b1b1b]"
+            href="#home"
+            className="group flex items-center gap-2 font-serif text-3xl lg:text-4xl font-bold tracking-tight text-[#1b1b1b]"
           >
-            Rampravesh.
+            <span>Rampravesh</span>
+            <span className="h-2 w-2 rounded-full bg-[#cb7b43] transition-transform duration-300 group-hover:scale-150" />
           </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden items-center gap-10 lg:flex">
-            {links.map((item, index) => (
+          <nav className="hidden items-center gap-8 lg:flex">
+            {links.map((item) => (
               <Link
                 key={item.title}
                 href={item.href}
-                className={`relative text-[15px] transition ${
-                  index === 0
-                    ? "text-[#c46b35]"
-                    : "text-[#232323] hover:text-[#c46b35]"
-                }`}
+                className="relative text-sm font-medium tracking-wide text-[#2c2c2c] transition-colors hover:text-[#cb7b43]"
               >
                 {item.title}
-
-                {index === 0 && (
-                  <span className="absolute left-0 -bottom-3 h-[2px] w-full rounded-full bg-[#c46b35]" />
-                )}
               </Link>
             ))}
           </nav>
 
           {/* CTA */}
           <Link
-            href="#contact"
-            className="hidden lg:flex items-center gap-2 rounded-2xl bg-[#2d3b23] px-7 py-4 text-white transition hover:scale-105"
+            href="/resume"
+            className="hidden lg:flex items-center gap-2.5 rounded-full bg-[#2e3b23] px-6 py-3 text-sm font-semibold text-[#f7f1e8] shadow-md transition-all duration-300 hover:scale-105 hover:bg-[#3f4f2d] hover:shadow-lg"
           >
-            Let's Connect
-            <span className="rounded-full bg-[#d59b55] p-1">
-              <ArrowUpRight size={15} />
+            <Download size={16} className="text-[#e2a867]" />
+            <span>Download Resume</span>
+            <span className="flex items-center justify-center rounded-full bg-[#cb7b43] p-1 text-white">
+              <ArrowUpRight size={14} />
             </span>
           </Link>
 
-          {/* Mobile */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden"
+            aria-label="Toggle Navigation Menu"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#d8cabb] bg-[#f2e7d8] text-[#1b1b1b] lg:hidden"
           >
-            <Menu size={30} />
+            {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </header>
 
+      {/* Mobile Drawer */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -30 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            className="fixed inset-0 z-40 bg-[#f7f1e8] p-10 lg:hidden"
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-40 bg-[#f7f1e8]/98 backdrop-blur-xl p-8 lg:hidden flex flex-col justify-between"
           >
-            <div className="mt-24 flex flex-col gap-8">
+            <div className="mt-20 flex flex-col gap-6">
               {links.map((item) => (
                 <Link
                   key={item.title}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="text-3xl font-serif"
+                  className="font-serif text-3xl font-bold text-[#1b1b1b] transition-colors hover:text-[#cb7b43]"
                 >
                   {item.title}
                 </Link>
               ))}
+            </div>
 
+            <div className="mb-8">
               <Link
-                href="#contact"
-                className="mt-6 inline-flex w-fit items-center gap-2 rounded-xl bg-[#2d3b23] px-6 py-4 text-white"
+                href="/resume"
+                onClick={() => setOpen(false)}
+                className="flex w-full items-center justify-center gap-3 rounded-2xl bg-[#2e3b23] py-4 text-center text-base font-semibold text-[#f7f1e8] shadow-lg"
               >
-                Let's Connect
+                <Download size={18} className="text-[#e2a867]" />
+                <span>Download Resume</span>
                 <ArrowUpRight size={18} />
               </Link>
             </div>
