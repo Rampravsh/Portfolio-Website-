@@ -13,9 +13,14 @@ const sans = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Rampravesh | Full Stack Developer",
+  title: "Rampravesh | Full Stack • Mobile • AI Developer",
   description:
     "Building digital experiences that make impact.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
