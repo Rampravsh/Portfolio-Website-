@@ -314,7 +314,7 @@ export default function Skills() {
               >
                 <div className="flex items-center gap-3 border-b border-[#ebdcca] pb-4 mb-6">
                   {currentCategory && (
-                    <>
+                    <div className="flex items-center gap-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#2e3b23] text-[#e2a867]">
                         <currentCategory.icon size={20} />
                       </div>
@@ -326,7 +326,7 @@ export default function Skills() {
                           {currentCategory.skills.length} competencies listed in this domain
                         </p>
                       </div>
-                    </>
+                    </div>
                   )}
                 </div>
 

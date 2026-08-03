@@ -82,7 +82,7 @@ Make sure Node.js `v18+` or `v20+` is installed on your system.
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/Rampravsh/p2.git
+git clone https://github.com/Rampravsh/Portfolio-Website-
 cd p2
 ```
 
@@ -109,27 +109,52 @@ npm run start
 
 ```text
 p2/
+├── .github/
+│   └── workflows/
+│       ├── ci.yml             # Automated GitHub Actions CI Pipeline
+│       └── deploy-vercel.yml  # Automated Vercel Deployment Workflow
 ├── app/
-│   ├── globals.css         # Tailwind v4 import & font variables
-│   ├── layout.tsx          # Root layout with fonts & metadata
-│   ├── page.tsx            # Main portfolio page assembly
+│   ├── globals.css            # Tailwind v4 import & font variables
+│   ├── icon.svg               # Custom brand SVG favicon
+│   ├── layout.tsx             # Root layout with fonts & metadata
+│   ├── page.tsx               # Main portfolio page assembly
 │   └── resume/
-│       └── page.tsx        # Printable PDF resume page
+│       └── page.tsx           # Printable PDF resume page
 ├── components/
-│   ├── Navbar.tsx          # Sticky glassmorphic navbar & drawer
-│   ├── Hero.tsx            # Hero banner & highlight skill strip
-│   ├── About.tsx           # Engineering philosophy & stats counter
-│   ├── Skills.tsx          # Featured skills grid & 9 domain tabs
-│   ├── Projects.tsx        # Filterable project showcase & GitHub CTA
-│   ├── TechStack.tsx       # Architecture, CS core, & dev tools
-│   ├── Contact.tsx         # Interactive contact form & email copy
-│   └── Footer.tsx          # Footer with back-to-top navigation
+│   ├── Navbar.tsx             # Sticky glassmorphic navbar & drawer
+│   ├── Hero.tsx               # Hero banner & highlight skill strip
+│   ├── About.tsx              # Engineering philosophy & stats counter
+│   ├── Skills.tsx             # Featured skills grid & 9 domain tabs
+│   ├── Projects.tsx           # Filterable project showcase & GitHub CTA
+│   ├── TechStack.tsx          # Architecture, CS core, & dev tools
+│   ├── Contact.tsx            # Interactive contact form & email copy
+│   └── Footer.tsx             # Footer with back-to-top navigation
 ├── public/
+│   ├── icon.svg               # Favicon asset
 │   └── images/
-│       └── profile.png     # Profile photo asset
+│       └── profile.png        # Profile photo asset
+├── vercel.json                # Vercel configuration
 ├── package.json
 └── tsconfig.json
 ```
+
+---
+
+## ⚙️ CI/CD Pipeline & Vercel Deployment
+
+This project includes automated Continuous Integration and Continuous Deployment (CI/CD) using **GitHub Actions** and **Vercel**:
+
+### 1. 🔄 Continuous Integration (`ci.yml`)
+- Triggered on every `push` or `pull_request` to `main` or `master`.
+- Installs dependencies, performs TypeScript compilation, and verifies `next build` to ensure zero production build errors before code is merged.
+
+### 2. 🌐 Vercel Deployment Guide
+To host this portfolio live on Vercel:
+1. Push your repository code to GitHub (`https://github.com/Rampravsh/Portfolio-Website-`).
+2. Go to [Vercel Dashboard](https://vercel.com/dashboard) -> **Add New Project**.
+3. Select your GitHub repository (`Portfolio-Website-`).
+4. Keep framework as **Next.js** and click **Deploy**.
+5. Vercel will automatically build and assign a free custom SSL domain (e.g. `your-portfolio.vercel.app`) with automatic deployments on every Git push!
 
 ---
 
