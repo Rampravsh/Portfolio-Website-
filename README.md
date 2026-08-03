@@ -1,6 +1,11 @@
 # Rampravesh | Full Stack • Mobile • AI Developer Portfolio
 
+[![Live Portfolio Website](https://img.shields.io/badge/Live_Portfolio-rampraveshkumar.vercel.app-2e3b23?style=for-the-badge&logo=vercel&logoColor=white)](https://rampraveshkumar.vercel.app/)
+[![GitHub Badge](https://img.shields.io/badge/GitHub-Rampravsh-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Rampravsh)
+
 A modern, high-performance, editorial portfolio website showcasing full-stack web applications, cross-platform mobile apps, AI workflows, and software architecture principles. 
+
+🌐 **Live Demo**: [https://rampraveshkumar.vercel.app/](https://rampraveshkumar.vercel.app/)
 
 Built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, **Tailwind CSS v4**, and **Framer Motion**.
 
