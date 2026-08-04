@@ -6,12 +6,12 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
-  { title: "Home", href: "#home" },
-  { title: "About", href: "#about" },
-  { title: "Skills", href: "#skills" },
-  { title: "Projects", href: "#projects" },
-  { title: "Architecture", href: "#tech-stack" },
-  { title: "Contact", href: "#contact" },
+  { title: "Home", href: "/#home" },
+  { title: "About", href: "/#about" },
+  { title: "Skills", href: "/#skills" },
+  { title: "Projects", href: "/#projects" },
+  { title: "Architecture", href: "/#tech-stack" },
+  { title: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -23,7 +23,7 @@ export default function Navbar() {
         <div className="mx-auto flex h-20 lg:h-24 max-w-7xl items-center justify-between px-6 lg:px-10">
           {/* Logo */}
           <Link
-            href="#home"
+            href="/"
             className="group flex items-center gap-2 font-serif text-3xl lg:text-4xl font-bold tracking-tight text-[#1b1b1b]"
           >
             <span>Rampravesh</span>

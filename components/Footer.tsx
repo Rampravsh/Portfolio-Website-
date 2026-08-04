@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col items-center gap-2 md:items-start">
             <Link
-              href="#home"
+              href="/"
               className="font-serif text-3xl font-bold tracking-tight text-white flex items-center gap-2"
             >
               <span>Rampravesh</span>
@@ -30,13 +30,16 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <nav className="flex flex-wrap items-center justify-center gap-6 text-xs font-medium text-[#dfd5c7]">
-            <Link href="#home" className="transition hover:text-white">Home</Link>
-            <Link href="#about" className="transition hover:text-white">About</Link>
-            <Link href="#skills" className="transition hover:text-white">Skills</Link>
-            <Link href="#projects" className="transition hover:text-white">Projects</Link>
-            <Link href="#tech-stack" className="transition hover:text-white">Architecture</Link>
-            <Link href="#contact" className="transition hover:text-white">Contact</Link>
+          <nav className="flex flex-wrap items-center justify-center gap-5 sm:gap-6 text-xs font-medium text-[#dfd5c7]">
+            <Link href="/#home" className="transition hover:text-white">Home</Link>
+            <Link href="/#about" className="transition hover:text-white">About</Link>
+            <Link href="/#skills" className="transition hover:text-white">Skills</Link>
+            <Link href="/#projects" className="transition hover:text-white">Projects</Link>
+            <Link href="/#tech-stack" className="transition hover:text-white">Architecture</Link>
+            <Link href="/faq" className="transition hover:text-white">FAQ</Link>
+            <Link href="/terms" className="transition hover:text-white">Terms</Link>
+            <Link href="/sitemap" className="transition hover:text-white">Sitemap</Link>
+            <Link href="/#contact" className="transition hover:text-white">Contact</Link>
           </nav>
 
           {/* Social Icons & Back to Top */}

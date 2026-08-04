@@ -102,7 +102,7 @@ export default function Projects() {
 
         {/* Projects Grid */}
         <div className="mt-12 grid gap-8 md:grid-cols-2">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.title}
