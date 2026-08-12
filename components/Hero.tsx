@@ -165,13 +165,12 @@ export default function Hero() {
             <Image
               src="/images/profile.png"
               alt="Rampravesh - Full Stack & AI Developer"
-              width={450}
-              height={600}
+              fill
               priority
               quality={100}
-              unoptimized
-              sizes="(max-width: 768px) 100vw, 380px"
-              className="h-full w-full scale-[1.02] object-cover object-[50%_15%]"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 450px"
+              className="object-cover object-[50%_15%]"
+              style={{ imageRendering: "-webkit-optimize-contrast" }}
             />
           </div>
 

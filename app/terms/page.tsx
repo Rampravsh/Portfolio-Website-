@@ -13,7 +13,7 @@ export default function TermsPage() {
       id: "agreement",
       title: "1. Acceptance of Terms",
       content:
-        "By accessing and using this portfolio website (rampravesh.dev or associated domains) or engaging Rampravesh for software engineering, full-stack development, or consulting services, you agree to be bound by these Terms and Conditions. If you do not agree to all terms, please refrain from using the site or services.",
+        "By accessing and using this portfolio website (rampraveshkumar.vercel.app or associated domains) or engaging Rampravesh for software engineering, full-stack development, or consulting services, you agree to be bound by these Terms and Conditions. If you do not agree to all terms, please refrain from using the site or services.",
     },
     {
       id: "ip-rights",
